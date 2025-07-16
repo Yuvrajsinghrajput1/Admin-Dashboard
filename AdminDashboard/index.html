@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Age Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="sidebar">
+        <h2>CODING <span>AGE</span></h2>
+        <ul>
+            <li onclick="showSection('dashboard')"><i class="fa-solid fa-house"></i> Dashboard</li>
+            <li onclick="showSection('students')"><i class="fa-solid fa-graduation-cap"></i> Students</li>
+            <li onclick="showSection('tasks')"><i class="fa-solid fa-pencil"></i> Tasks</li>
+            <li onclick="showSection('gallery')"><i class="fa-solid fa-image"></i> Gallery</li>
+            <li onclick="showSection('courses')"><i class="fa-solid fa-book"></i> Courses</li>
+            <li onclick="showSection('add-product')"><i class="fa-solid fa-plus"></i> Add Product</li>
+            <li onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+     <header>
+        <div class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i> 
+        <div class="profile">Hey, Daniel (Admin) <i class="fa-solid fa-user"></i></div>
+       </div>
+     </header>
+
+     <section id="dashboard" class="section active">
+        <h1>Dashboard</h1>
+        <div class="cards">
+         <div class="card"><img src="./images.png" alt="Sales Icon" class="icon"><h3>Total Sales</h3><p> $25,024</p> <small>Last 24 Hours</small></div>
+         <div class="card"><img src="./download.png" alt="Expenses Icon" class="icon"><h3>Total Expenses</h3><p> $41,160</p><small>Last 24 Hours</small></div>
+         <div class="card"><img src="./images.jfif" alt="Income Icon" class="icon"><h3>Total Income</h3> <p>$10,864</p><small>Last 24 Hours</small></div>
+        </div>
+
+        <h2>Recent orders</h2>
+        <table>
+            <thead>
+                <tr><th>Product Name</th><th>Product Number</th><th>Payment</th><th>Status</th><th>Details</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Foldable Mini Drone</td><td>85631</td><td>Due</td><td><span>Pending</span></td><td><a href="#">View</a></td></tr>
+                 <tr><td>Foldable Mini Drone</td><td>85631</td><td>Due</td><td><span>Pending</span></td><td><a href="#">View</a></td></tr>
+                 <tr><td>Foldable Mini Drone</td><td>85631</td><td>Due</td><td><span>Pending</span></td><td><a href="#">View</a></td></tr>
+                 <tr><td>Foldable Mini Drone</td><td>85631</td><td>Due</td><td><span>Pending</span></td><td><a href="#">View</a></td></tr>
+                 <tr><td>Foldable Mini Drone</td><td>85631</td><td>Due</td><td><span>Pending</span></td><td><a href="#">View</a></td></tr>
+                
+            </tbody>
+        </table>
+
+        <h2>Recent Updates</h2>
+        <div class="card">
+        <ul class="updates">
+         <li>Mike tyson received his order of Night lion tech GPS drone (2 minutes ago)</li>
+         <li>Mike tyson received his order of Night lion tech GPS drone (2 minutes ago)</li>
+        </ul>
+        </div>
+
+        <h2>Sales Analystics</h2>
+        <ul class="analystics">
+         <div class="card"><li>Online Orders:  <span>+39% </span>(3849)</li></div>
+          <div class="card"><li>Offline Orders: <span>-17% </span>(1100)</li></div>
+           <div class="card"><li>New Customer: <span>+25%</span> (8491)</li></div>
+        </ul>
+     </section>
+
+        <section id="students" class="section">
+            <h1>Customer List</h1>
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Name</th><th>Username</th><th>Email</th><th>Phone</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Leanne Graham</td><td>Bret</td><td>Sincer@april.biz</td><td>1-770-736-8031</td></tr>
+                    <tr><td>2</td><td>Evin Howell</td><td>Antontte</td><td>Shanna@messli.biz</td><td>1-650-736-8031</td></tr>
+                    <tr><td>3</td><td>Kiran Graham</td><td>Kainena</td><td>Samanta@anni.biz</td><td>1-770-586-8031</td></tr>
+                    <tr><td>3</td><td>Raju Graham</td><td>Kainena</td><td>Samanta@anni.biz</td><td>1-770-586-8031</td></tr>
+                    <tr><td>3</td><td> Graham</td><td>Kainena</td><td>Samanta@anni.biz</td><td>1-770-586-8031</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="tasks" class="section">
+         <h1>To Do List</h1>
+         <input type="text" id="taskInput" placeholder="Add Task">
+         <button onclick="addTask()" class="tasksbutton">Add</button>
+         <p id="task-count">Completed: 0 | Uncompleted: 0</p>
+         <div id="completedTasks"><h3>Completed Tasks</h3></div>
+          <div id="uncompletedTasks"><h3>Uncompleted Tasks</h3></div>
+        </section>
+
+        <section id="gallery" class="section">
+            <h1>Photos Gallery</h1>
+            <div class="gallery">
+                <div>iPhone</div>
+                <div>Apple MacBook</div>
+                <div>Green Earrings</div>
+                 <div>Cricket Helmet</div>
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <h1>Courses</h1>
+            <div class="courses">
+                <div>HTML</div>
+                <div>CSS</div>
+                <div>JavaScript</div>
+                <div>React</div>
+                <div>C</div>
+                <div>Java</div>
+            </div>
+        </section>
+
+        <section id="add-product" class="section">
+            <h1>Add (Coming Soon...)</h1>
+        </section>
+    </div>
+ 
+    <script src="app.js"></script>
+</body>
+</html>
